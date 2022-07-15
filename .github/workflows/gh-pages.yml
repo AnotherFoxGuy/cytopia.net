@@ -1,0 +1,29 @@
+name: Build website
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install && run libman
+        run: |
+          dotnet tool install -g Microsoft.Web.LibraryManager.Cli
+          ~/.dotnet/tools/libman restore
+
+      - name: Build
+        run: |
+          dotnet restore
+          dotnet run -c Release
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./output
+          force_orphan: true

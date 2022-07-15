@@ -3,14 +3,14 @@
   "defaultProvider": "jsdelivr",
   "libraries": [
     {
-      "library": "jquery@3.2.1",
+      "library": "jquery@3.6.0",
       "destination": "wwwroot/scripts/jquery",
       "files": [
         "dist/jquery.min.js"
       ]
     },
     {
-      "library": "foundation-sites@6.6.3",
+      "library": "foundation-sites@6.7.5",
       "destination": "input/stylesheets/foundation",
       "files": [
         "scss/**/*.scss",
@@ -18,7 +18,7 @@
       ]
     },
     {
-      "library": "motion-ui@2.0.3",
+      "library": "motion-ui@2.0.4",
       "destination": "input/stylesheets/motion-ui",
       "files": [
         "src/**/*.scss"

@@ -22,3 +22,5 @@ wwwroot/scripts/
 output/
 
 .idea/
+
+cache/
